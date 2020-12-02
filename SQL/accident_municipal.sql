@@ -14,20 +14,6 @@
 SELECT *
 FROM Israel_Accidents
 
-UPDATE Israel_Accidents
-SET DISTRICT = 'יהודה ושומרון'
-WHERE CITY = 'יהודה ושומרון'
-
-UPDATE Israel_Accidents
-SET DISTRICT = 'מרכז'
-WHERE CITY = 'חוף השרון'
-
-UPDATE Israel_Accidents
-SET VEHICLE = MOTORCYCLE+TRUCK+BICYCLE+PRIVATE
-
-SELECT *
-FROM Israel_Accidents
-
 ---1) Which MUNITYPE has the highest number of accidents and injuries?
 SELECT MUNITYPE, SUM(INJTOTAL) AS "Sum Of Injuries",
 	   CAST(ROUND(SUM(INJTOTAL)*100/SUM(SUM(INJTOTAL)) OVER (),2) AS varchar)+'%' AS "Injuries Percentage",
